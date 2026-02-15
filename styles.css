@@ -1,0 +1,273 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --primary: #2563eb;
+  --accent: #f97316;
+  --bg: #f1f5f9;
+  --text: #0f172a;
+  --radius: 14px;
+  --shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  --title-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* =========================
+   HEADER (FLEXBOX)
+========================= */
+.header {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow);
+  z-index: 10;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.badge {
+  background: var(--accent);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn {
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn--primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.btn--ghost {
+  background: transparent;
+}
+
+.btn--cart {
+  background: #e0e7ff;
+}
+
+.btn--added {
+  background: #22c55e;
+  color: white;
+}
+
+/* =========================
+   HERO (PSEUDO-ELEMENTS)
+========================= */
+.hero {
+  position: relative;
+  margin: 2rem;
+  padding: 3rem;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #020617, #1e3a8a);
+  color: white;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(var(--accent), transparent);
+  top: -100px;
+  right: -100px;
+  opacity: 0.4;
+}
+
+.hero-content {
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero h1 {
+  font-size: var(--title-size);
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   FILTER PILLS
+========================= */
+.filters {
+  padding: 1rem 2rem;
+}
+
+.filter-pills {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.pill {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #cbd5f5;
+  background: white;
+  cursor: pointer;
+}
+
+.pill:hover:not(.active) {
+  background: #e0e7ff;
+}
+
+.pill.active {
+  background: var(--primary);
+  color: white;
+}
+
+/* =========================
+   PRODUCTS GRID
+========================= */
+.products {
+  padding: 2rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+}
+
+.price {
+  margin: 0.5rem 0;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: #64748b;
+  margin-left: 0.5rem;
+}
+
+.rating {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+/* SALE VARIANT */
+.sale::before {
+  content: "SALE";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--accent);
+  color: white;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  border-radius: 6px;
+}
+
+/* LOW STOCK VARIANT */
+.low-stock::after {
+  content: "Low Stock";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #dc2626;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  border-radius: 6px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 640px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+  }
+
+  .btn {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}

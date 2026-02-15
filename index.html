@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechMart Online Store</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">🛒 TechMart</div>
+      <div class="header-actions">
+        <button class="btn btn--ghost">Login</button>
+        <button class="btn btn--cart">Cart <span class="badge">3</span></button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Big <span>Weekend Sale</span> on Gadgets</h1>
+        <p>Up to 40% off on selected laptops, headphones, and accessories.</p>
+        <button class="btn btn--primary">Shop Deals</button>
+      </div>
+    </section>
+
+    <!-- FILTER -->
+    <section class="filters">
+      <h3>Filter by</h3>
+      <div class="filter-pills">
+        <button class="pill active">All</button>
+        <button class="pill">Laptops</button>
+        <button class="pill">Headphones</button>
+        <button class="pill">Accessories</button>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products">
+      <h2>Featured Products</h2>
+
+      <div class="product-grid">
+        <!-- CARD 1 -->
+        <article class="card sale" data-rating="4.9">
+          <img src="products/laptop.jpeg" alt="Laptop" />
+          <h4>Ultrabook Pro 14”</h4>
+          <p>Intel i7 · 16GB RAM · 512GB SSD</p>
+          <div class="price">
+            <span class="current">₱54,990</span>
+            <span class="old">₱64,990</span>
+          </div>
+          <div class="rating">★★★★★ (4.9)</div>
+          <button class="btn btn--primary">Add to Cart</button>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="card added">
+          <img src="products/headset.jpeg" alt="Headset" />
+          <h4>Noise-Cancelling Headphones</h4>
+          <p>Wireless · 30h battery · Fast charge</p>
+          <div class="price">
+            <span class="current">₱3,499</span>
+          </div>
+          <div class="rating">★★★★☆ (4.8)</div>
+          <button class="btn btn--added">✔ Added</button>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="card">
+          <img src="products/mouse.jpeg" alt="Mouse" />
+          <h4>Ergonomic Wireless Mouse</h4>
+          <p>Silent click · USB-C · 2.4GHz</p>
+          <div class="price">
+            <span class="current">₱799</span>
+          </div>
+          <div class="rating">★★★★☆ (4.2)</div>
+          <button class="btn btn--primary">Add to Cart</button>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="card low-stock">
+          <img src="products/keyboard.jpeg" alt="Keyboard" />
+          <h4>Mechanical Keyboard (RGB)</h4>
+          <p>Blue switches · RGB backlight</p>
+          <div class="price">
+            <span class="current">₱2,199</span>
+          </div>
+          <div class="rating">★★★★☆ (4.0)</div>
+          <button class="btn btn--primary">Add to Cart</button>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © 2026 TechMart Online Store · Advanced CSS Demo
+    </footer>
+  </body>
+</html>
